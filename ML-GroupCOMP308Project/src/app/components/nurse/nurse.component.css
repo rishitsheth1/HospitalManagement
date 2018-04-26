@@ -1,0 +1,28 @@
+.nav-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+.side-nav {
+  padding: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 150px;
+  height: 100%;
+}
+
+.main-content{
+  padding: 50px;
+}
+
+.round-notification{
+  margin-left: 5px;
+  border-radius: 10%;
+  background: #333;
+  color: #fff;
+  width: 20px;
+  text-align: center;
+}

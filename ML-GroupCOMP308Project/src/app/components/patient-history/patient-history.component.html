@@ -1,0 +1,47 @@
+<h5 class="text-gray">Patient History</h5>
+
+<mat-expansion-panel *ngFor="let medication of medications">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <mat-icon mat-list-icon>person</mat-icon>
+      <label class="m-l-5 m-t-1">{{medication.name}}</label>
+    </mat-panel-title>
+    <div class="mat-description m-t-1">
+      <div> {{medication.createdAt | date}} - {{medication.end_date | date}}</div>
+    </div>
+  </mat-expansion-panel-header>
+
+  <div class="patients-content">
+
+    <!--<div class="filter">-->
+    <!--<mat-form-field>-->
+    <!--<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">-->
+    <!--</mat-form-field>-->
+    <!--</div>-->
+
+    <table class="table">
+
+      <thead>
+      <tr>
+        <td> Date</td>
+        <td> Heart Rate</td>
+        <td> Body Temperature</td>
+        <td> Respiratory Rate</td>
+        <td> Blood Pressure</td>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let data of medication.checkups">
+        <td> {{data.date_added | date:'EEE, MMM dd, yyyy'}}</td>
+        <td> {{data.heartRate}} BPM</td>
+        <td> {{data.bodyTemperature}} Cel</td>
+        <td> {{data.respiratoryRate}} BPM</td>
+        <td> {{data.bloodPressure}} BPM</td>
+      </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+</mat-expansion-panel>

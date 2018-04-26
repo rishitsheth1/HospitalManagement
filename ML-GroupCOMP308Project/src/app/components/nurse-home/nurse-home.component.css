@@ -1,0 +1,7 @@
+.unclickable:hover{
+  cursor: default;
+}
+
+.motivational-message{
+  width: 100%;
+}

@@ -1,0 +1,33 @@
+
+<div class="login">
+
+  <h2 class="text-center app-title">Patient-Nurse Management App</h2>
+
+  <mat-card class="login-card">
+    <h4 class="m-b-10 d-inline-block">User Login</h4>
+    <form method="post" class="login-form" [formGroup]="options" (ngSubmit)="login()">
+      <div>
+        <mat-form-field class="m-b-10"
+                        [hideRequiredMarker]="true">
+          <input matInput type="email" placeholder="Email" formControlName="uname" required>
+          <mat-error *ngIf="options.get('uname')?.invalid">Email not valid</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field class="m-b-10"
+                        [hideRequiredMarker]="true">
+          <input matInput type="password" placeholder="Password" formControlName="password" required>
+          <mat-error *ngIf="options.get('password')?.invalid">Password Not Valid</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button [disabled]="!options.valid" type="submit" mat-raised-button color="primary">Login</button>
+      </div>
+
+      <div class="m-t-10 text-danger" *ngIf="serverErrorMessage">{{serverErrorMessage}}</div>
+
+    </form>
+  </mat-card>
+</div>

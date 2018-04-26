@@ -1,0 +1,21 @@
+<h5>Your Notifications/Alerts</h5>
+<mat-list>
+  <mat-card class="m-b-10" *ngFor="let message of messages">
+    <mat-list-item>
+      <mat-icon matListIcon>notifications</mat-icon>
+      <!--<span class="col col-sm-2">-->
+      <h3 matLine> {{message.message}} </h3>
+      <p matLine>
+        <span> {{message.patientId.name}} </span> |
+        <span> {{message.patientId.phone}} </span> |
+        <span> {{message.patientId.email}} </span>
+      </p>
+      <p matLine>
+        <span> -- Added on <span class="text-primary">{{message.createdAt | date:'LLL dd, yyyy hh:mm a'}} </span> </span>
+      </p>
+      <button [disabled]="message.hasViewed" mat-raised-button color="primary" (click)="resolve()">Resolve</button>
+    </mat-list-item>
+  </mat-card>
+</mat-list>
+
+<!--<button mat-raised-button (click)="addNotification()">Add Notification Check</button>-->

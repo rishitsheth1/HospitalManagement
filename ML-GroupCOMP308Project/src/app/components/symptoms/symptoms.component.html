@@ -1,0 +1,47 @@
+<h4>Self Checkup (Beta)</h4>
+
+<h5>Fill up the form to diagnose a disease.</h5>
+
+<form method="post" class="m-b-10" [formGroup]="options" (ngSubmit)="checkSymptoms()">
+
+  <div class="m-b-10">
+    <label>Enter approximate days since symptoms started </label>
+    <mat-form-field>
+      <input matInput type="number" formControlName="days">
+      <mat-error *ngIf="options.get('days')?.invalid && !options.get('days')?.getError('max')"> Days not valid.
+      </mat-error>
+      <mat-error *ngIf="options.get('days')?.getError('max')">More than 4 weeks! You need to checkup with the doctor.
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="m-b-10">
+    <label>Enter the age (round up  years)</label>
+    <mat-form-field>
+      <input matInput type="number" formControlName="age">
+      <mat-error *ngIf="options.get('age')?.invalid"> Age not valid.</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="m-b-10">
+    <label class="m-b-10">Select Symptoms to diagnose a probable disease</label>
+    <mat-grid-list cols="8" rowHeight="40px">
+      <mat-grid-tile *ngFor="let symptom of symptoms">
+        <mat-checkbox (change)="checkboxClicked($event)" value="{{symptom}}" formGroupName="symptoms">{{symptom}}</mat-checkbox>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <label *ngIf="totalChecboxClicked < 3"> *Select minimum of three symptoms to proceed.</label>
+  </div>
+
+  <!--<div class="container row">-->
+  <!--<div class="col col-md-2" *ngFor="let symptom of symptoms">-->
+  <!--<mat-checkbox>{{symptom}}</mat-checkbox>-->
+  <!--</div>-->
+  <!--</div>-->
+  <button type="submit" [disabled]="!options.valid || totalChecboxClicked < 3" mat-raised-button color="primary">Submit</button>
+
+</form>
+
+<h3 class="jumbotron" *ngIf="diagnoseResults">
+  As per your data, the predicted disease is : {{ diagnoseResults }}
+</h3>

@@ -1,0 +1,39 @@
+<h5>Add Patient</h5>
+
+<form class="patient-detail-container" method="post" [formGroup]="options" novalidate (ngSubmit)="addPatient()">
+  <mat-form-field>
+    <input matInput type="text" placeholder="Name" formControlName="Name">
+    <mat-error *ngIf="options.get('Name')?.invalid">Name not valid</mat-error>
+  </mat-form-field>
+
+  <mat-form-field [color]="options.value.color" class="m-l-5">
+    <input matInput type="email" placeholder="Email" formControlName="Email">
+    <mat-error *ngIf="options.get('Email')?.invalid">Email not valid</mat-error>
+  </mat-form-field>
+
+  <mat-form-field [color]="options.value.color" class="m-l-5">
+    <input matInput type="text" placeholder="Address" formControlName="Address">
+    <mat-error *ngIf="options.get('Address')?.invalid">Address not valid</mat-error>
+  </mat-form-field>
+
+  <mat-form-field [color]="options.value.color" class="m-l-5">
+    <input matInput type="text" placeholder="Phone" formControlName="Phone">
+    <mat-error *ngIf="options.get('Phone')?.invalid">Phone not valid</mat-error>
+  </mat-form-field>
+
+  <mat-form-field [color]="options.value.color" class="m-l-5">
+    <input matInput type="password" placeholder="Password" formControlName="Password">
+    <mat-error *ngIf="options.get('Password')?.invalid">Password not valid</mat-error>
+  </mat-form-field>
+
+  <mat-form-field [color]="options.value.color" class="m-l-5">
+    <input matInput type="password" placeholder="Confirm Password" formControlName="ConfirmPassword">
+    <mat-error *ngIf="options.get('ConfirmPassword')?.invalid">Confirm Password not valid</mat-error>
+  </mat-form-field>
+
+  <div>
+    <button type="submit" [disabled]="!options.valid" mat-raised-button color="primary">Add</button>
+    <span class="m-l-5 text-danger" *ngIf="serverErrorMessage">{{serverErrorMessage}}</span>
+    <span class="m-l-5 text-success" *ngIf="successMessage">{{successMessage}}</span>
+  </div>
+</form>

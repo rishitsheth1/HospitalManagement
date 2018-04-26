@@ -1,0 +1,94 @@
+@import './prebuilt-themes/indigo-pink.css';
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.m-b-10{
+  margin-bottom: 10px;
+}
+
+.m-t-10{
+  margin-top: 10px;
+}
+
+.m-t-20{
+  margin-top: 20px;
+}
+
+.m-l-5{
+  margin-left: 5px;
+}
+
+.form input {
+  padding: 8px
+}
+
+.form textarea {
+  padding: 8px;
+}
+
+.textarea-div * {
+  vertical-align: middle;
+}
+
+
+.button-red {
+  background: #e74c3c;
+}
+
+.button-blue {
+  background: #3fa3e2;
+}
+
+.font-12{
+  font-size: 12px;
+}
+
+.button {
+  width: 100%;
+  border: 0px;
+  padding: 8px;
+  font-size: 14px;
+  color: #fff;
+  margin: 5px;
+}
+
+input[readonly] {
+  background: #e6e6e4;
+}
+
+.counter::before {
+  content: counter(tr)'. ';
+}
+
+.table tbody tr{
+  counter-increment: tr;
+}
+
+.text-gray{
+  color: #222;
+}
+/*.counter {*/
+  /*padding: 5px;*/
+/*}*/
+
+.mat-spinner{
+  position: fixed !important;
+  top: 40%;
+  left: 50%;
+}
+
+.mat-spinner circle {
+  stroke-width: 5% !important;
+}

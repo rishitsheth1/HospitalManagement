@@ -1,0 +1,8 @@
+.patient-detail-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-detail-container > * {
+  width: 100%;
+}

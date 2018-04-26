@@ -1,0 +1,19 @@
+
+
+<mat-sidenav-container class="nav-container">
+  <mat-sidenav #sidenav mode="side" opened="true" class="side-nav"
+               [fixedInViewport]="options.value.fixed" [fixedTopGap]="options.value.top"
+               [fixedBottomGap]="options.value.bottom">
+    <mat-nav-list>
+      <a mat-list-item *ngFor="let link of links" [routerLink]="[{ outlets: { p: [link.link, (link.params ? link.params: '') ]} }]"> {{ link.name }} </a>
+      <a mat-list-item routerLink="/logout">Logout</a>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="main-content">
+    <mat-spinner hidden></mat-spinner>
+    <router-outlet name="p"></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,25 @@
+<div class="container" *ngIf="motivationalMessage">
+  <div class="jumbotron">
+    <h2>Hello, {{ patient }}!</h2>
+    <p>Here's the latest motivational quote:</p>
+    <h4>"{{motivationalMessage.phrase}}"</h4>
+    <h6 class="text-muted">- {{motivationalMessage.author}}</h6>
+    <p>Added on {{motivationalMessage.createdAt | date:'EEEE,  MMMM dd, yyyy - hh:mm aaa'}}</p>
+  </div>
+</div>
+
+<div class="container">
+  <form method="post" (submit)="sendAlert()" [formGroup]="options">
+    <label class="col col-sm-2">Having an issue? </label>
+    <mat-form-field class="send-alert"
+      [hideRequiredMarker]="true"
+      class="col col-sm-9">
+      <input matInput placeholder="Send Alert" formControlName="alert" required>
+      <mat-error *ngIf="options.get('alert')?.invalid">Alert Message not valid</mat-error>
+    </mat-form-field>
+
+    <button [disabled]="!options.valid" class="col col-sm-1" mat-icon-button>
+      <mat-icon aria-label="">send</mat-icon>
+    </button>
+  </form>
+</div>

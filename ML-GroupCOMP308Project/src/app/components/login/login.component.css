@@ -1,0 +1,22 @@
+body{
+  background: #5a6268;
+}
+
+.login{
+  margin: 100px auto 0 auto;
+  text-align: center;
+}
+
+.app-title{
+  margin-bottom: 25px;
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+.login-card{
+  padding: 80px;
+  margin: 0 auto;
+  display: inline-block;
+}

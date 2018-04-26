@@ -1,0 +1,23 @@
+{
+  "name": "PMS",
+  "description": "",
+  "main": "",
+  "authors": [
+    "yprocks <yppatel181093@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "4.1.0",
+    "hammerjs": "2.0.8",
+    "jQuery": "3.3.1"
+  }
+}
